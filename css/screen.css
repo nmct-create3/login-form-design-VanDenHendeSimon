@@ -25,6 +25,8 @@
     --global-text-linkColor--hover: #4F95FF;
     --global-text-linkColor--visited: #2E77E6;
 
+    --global-text-fontFamily: Inter, arial, sans-serif;
+
     --global-winow-backgroundColor: #F5F6FA;
 }
 
@@ -43,7 +45,7 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Inter, arial, sans-serif;
+    font-family: var(--global-text-fontFamily);
     color: var(--global-text-color);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -505,7 +507,22 @@ input {
 */
 
 .c-input {
+    /* reset default styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 
+    width: 100%;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    outline: none;
+
+    font-family: var(--global-text-fontFamily);
+    color: var(--global-text-color);
+
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px;
 }
 
 .c-input:focus {
