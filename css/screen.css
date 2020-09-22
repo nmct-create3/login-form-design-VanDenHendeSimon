@@ -201,6 +201,7 @@ a:focus {
 
 label {
     display: block;
+    margin-bottom: 8px;
 }
 
 input {
@@ -498,6 +499,48 @@ input {
     Card with box shadow
 */
 
+.c-card {
+    --c-card-backgroundColor: white;
+    --c-card-shadowColor: rgba(0, 0, 0, 0.07);
+    --c-card-shadow: 0 0 0 2px var(--c-card-shadowColor);
+
+    background-color: var(--c-card-backgroundColor);
+    /* padding: 48px 48px 24px 48px; */
+    border-radius: 4px;
+    box-shadow: var(--c-card-shadow);
+}
+
+.c-card__title {
+    padding: 48px;
+    text-align: center;
+    margin: 0;
+}
+
+.c-card__body {
+    padding: 0 48px 48px 48px;
+
+}
+
+.c-card__title {
+
+}
+
+.c-card__footer {
+    width: 100%;
+    border-top: 1px solid var(--c-card-shadowColor);
+
+    padding: 24px;
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.c-card__footer p {
+    margin-bottom: 0;
+    text-align: center;
+}
+
 /*
     Component: Forms
     ---
@@ -544,6 +587,10 @@ input {
 
 }
 
+.c-form-field {
+    margin-bottom: 24px;
+}
+
 /* If a input is focused within the form-field class change te color of the label */
 
 .c-form-field:focus-within .c-label {
@@ -553,6 +600,10 @@ input {
 .form-field--option {
     display: flex;
     align-items: center;
+}
+
+.form-field--option label {
+    margin: 0 0 0 8px;
 }
 
 /*
@@ -612,6 +663,14 @@ input {
     ---
     Utility classes to put specific colors onto elements
 */
+
+.u-center-text {
+    text-align: center;
+}
+
+.u-no-margin {
+    margin: 0;
+}
 
 .u-color-neutral-base {
     color: Silver;
