@@ -562,18 +562,40 @@ input {
 */
 
 .c-button {
+    --c-button-textColor: #fff;
+    --c-button-backgroundColor: #3385FF;
+    --c-button-backgroundColor--hover: #2E77E6;
+    --c-button-backgroundColor--focus: #1B4186;
+    --c-button-backgroundColor--active: #1B4186;
+    --c-button-border: solid 1px #2E77E6;
 
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    border: var(--c-button-border);
+    border-radius: 3px;
+    color: var(--c-button-textColor);
+    background-color: var(--c-button-backgroundColor);
+    line-height: 24px;
+    padding: 12px;
+
+    cursor: pointer;
+    outline: none;
 }
 
 .c-button:hover {
+    background-color: var(--c-button-backgroundColor--hover);
 
 }
 
 .c-button:focus {
+    background-color: var(--c-button-backgroundColor--focus);
 
 }
 
 .c-button:active {
+    background-color: var(--c-button-backgroundColor--active);
+    box-shadow: 0 0 0 1px var(--c-button-backgroundColor);
 
 }
 
