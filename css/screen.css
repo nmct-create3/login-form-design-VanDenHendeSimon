@@ -225,6 +225,9 @@ input {
 
 .o-row--login {
     /* stuff here to align the card */
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 /* size modifiers */
@@ -527,7 +530,7 @@ input {
 
 .c-card__footer {
     width: 100%;
-    border-top: 1px solid var(--c-card-shadowColor);
+    border-top: 2px solid var(--c-card-shadowColor);
 
     padding: 24px;
 
@@ -584,7 +587,17 @@ input {
 */
 
 .c-label {
+    --c-label-textColor: #606274;
 
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 8px;
+    color: var(--c-label-textColor);
+
+}
+
+.c-label--option {
+    margin: 0 0 0 8px;
 }
 
 .c-form-field {
@@ -597,13 +610,9 @@ input {
 
 }
 
-.form-field--option {
+.c-form-field--option {
     display: flex;
-    align-items: center;
-}
-
-.form-field--option label {
-    margin: 0 0 0 8px;
+    align-items: flex-start;
 }
 
 /*
@@ -611,6 +620,10 @@ input {
     ---
     Class to put on form buttons or links
 */
+
+.c-button-container {
+    margin-bottom: 16px;
+}
 
 .c-button {
     --c-button-textColor: #fff;
@@ -663,6 +676,10 @@ input {
     ---
     Utility classes to put specific colors onto elements
 */
+
+.u-small-text {
+    font-size: 14px;
+}
 
 .u-center-text {
     text-align: center;
