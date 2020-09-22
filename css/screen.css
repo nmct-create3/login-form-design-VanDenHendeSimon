@@ -453,6 +453,31 @@ a:focus {
     Website main logo
 */
 
+.c-logo {
+    height: 24px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.c-logo__symbol {
+    display: block;
+    height: 100%;
+
+}
+
+.c-logo__symbol__text {
+    fill: #20223A;
+}
+
+.c-logo__symbol__innter-ring {
+    fill: #3385FF;
+}
+
+.c-logo__symbol__outer-ring {
+    fill: #1B4186;
+}
+
 /*
     Component: Card
     ---
