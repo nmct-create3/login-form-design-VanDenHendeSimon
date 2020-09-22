@@ -193,6 +193,14 @@ a:focus {
     text-decoration: underline;
 }
 
+label {
+    display: block;
+}
+
+input {
+    display: block;
+}
+
 /*------------------------------------*\
 #OBJECTS
 \*------------------------------------*/
@@ -517,6 +525,11 @@ a:focus {
 
 .c-form-field:focus-within .c-label {
 
+}
+
+.form-field--option {
+    display: flex;
+    align-items: center;
 }
 
 /*
