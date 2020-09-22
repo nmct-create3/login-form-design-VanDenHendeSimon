@@ -2,12 +2,30 @@
 #FONTS
 \*------------------------------------*/
 
+@font-face {
+    font-family: "Inter";
+    font-weight: 400;
+    src: url("../fonts/Inter-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-weight: 600;
+    src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
+}
+
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
 
 :root {
+    --global-text-color: #20223A;
+    --global-text-selectionColor: #3385FF;
+    --global-text-linkColor: #3385FF;
+    --global-text-linkColor--hover: #4F95FF;
+    --global-text-linkColor--visited: #2E77E6;
 
+    --global-winow-backgroundColor: #F5F6FA;
 }
 
 /* CSS variables here */
@@ -25,12 +43,12 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: grey;
+    font-family: Inter, arial, sans-serif;
+    color: var(--global-text-color);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: var(--global-winow-backgroundColor);
 }
 
 *,
@@ -47,13 +65,13 @@ html {
 */
 
 ::-moz-selection {
-    background: HotPink;
+    background: var(--global-text-selectionColor);
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: HotPink;
+    background: var(--global-text-selectionColor);
     color: white;
     text-shadow: none;
 }
@@ -158,18 +176,21 @@ hr {
 }
 
 a {
-    color: HotPink;
+    text-decoration: none;
+    color: var(--global-text-linkColor);
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: HotPink;
+    color: var(--global-text-linkColor--visited);
+    text-decoration: underline;
 }
 
 a:hover,
 a:focus {
-    color: DeepPink;
+    color: var(--global-text-linkColor--hover);
+    text-decoration: underline;
 }
 
 /*------------------------------------*\
