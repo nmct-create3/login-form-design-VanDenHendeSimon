@@ -27,7 +27,11 @@
 
     --global-text-fontFamily: Inter, arial, sans-serif;
 
-    --global-winow-backgroundColor: #F5F6FA;
+    --global-window-backgroundColor: #F5F6FA;
+
+    --global-input-borderColor: #eee;
+    --global-input-borderColor--focused: #3385ff;
+    --global-input-borderShadow: #3385ff4d;
 }
 
 /* CSS variables here */
@@ -50,7 +54,7 @@ html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--global-winow-backgroundColor);
+    background-color: var(--global-window-backgroundColor);
 }
 
 *,
@@ -511,11 +515,11 @@ input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    outline: none;
 
     width: 100%;
-    border-color: rgba(0, 0, 0, 0.1);
+    border: solid var(--global-input-borderColor);
     border-radius: 3px;
-    outline: none;
 
     font-family: var(--global-text-fontFamily);
     color: var(--global-text-color);
@@ -526,6 +530,8 @@ input {
 }
 
 .c-input:focus {
+    border: solid var(--global-input-borderColor--focused);
+    box-shadow: 0 0 0 3px var(--global-input-borderShadow);
 }
 
 /*
