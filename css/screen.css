@@ -32,6 +32,13 @@
     --global-input-borderColor: #eee;
     --global-input-borderColor--focused: #3385ff;
     --global-input-borderShadow: #3385ff4d;
+
+    --global-baseline: 8px;
+    --global-whitespace: calc(var(--global-baseline) * 3);
+    --global-whitespace-xs: calc(var(--global-baseline) * 1.5);
+    --global-whitespace-sm: calc(var(--global-baseline) * 2);
+    --global-whitespace-md: calc(var(--global-baseline) * 4);
+    --global-whitespace-lg: calc(var(--global-baseline) * 6);
 }
 
 /* CSS variables here */
@@ -472,6 +479,10 @@ input {
 */
 
 .c-logo {
+    --c-logo-symbol-textColor: #20223A;
+    --c-logo-symbol-innerRingColor: #3385FF;
+    --c-logo-symbol-outerRingColor: #1B4186;
+
     height: 24px;
 
     display: flex;
@@ -485,15 +496,15 @@ input {
 }
 
 .c-logo__symbol__text {
-    fill: #20223A;
+    fill: var(--c-logo-symbol-textColor);
 }
 
 .c-logo__symbol__innter-ring {
-    fill: #3385FF;
+    fill: var(--c-logo-symbol-innerRingColor);
 }
 
 .c-logo__symbol__outer-ring {
-    fill: #1B4186;
+    fill: var(--c-logo-symbol-outerRingColor);
 }
 
 /*
@@ -508,20 +519,18 @@ input {
     --c-card-shadow: 0 0 0 2px var(--c-card-shadowColor);
 
     background-color: var(--c-card-backgroundColor);
-    /* padding: 48px 48px 24px 48px; */
     border-radius: 4px;
     box-shadow: var(--c-card-shadow);
 }
 
 .c-card__title {
-    padding: 48px;
+    padding: var(--global-whitespace-lg);
     text-align: center;
     margin: 0;
 }
 
 .c-card__body {
-    padding: 0 48px 48px 48px;
-
+    padding: 0 var(--global-whitespace-lg) var(--global-whitespace-lg) var(--global-whitespace-lg);
 }
 
 .c-card__title {
@@ -532,7 +541,7 @@ input {
     width: 100%;
     border-top: 2px solid var(--c-card-shadowColor);
 
-    padding: 24px;
+    padding: var(--global-whitespace);
 
     display: flex;
     justify-content: center;
@@ -572,7 +581,7 @@ input {
 
     font-size: 16px;
     line-height: 24px;
-    padding: 12px;
+    padding: var(--global-whitespace-xs);
 }
 
 .c-input:focus {
@@ -601,7 +610,7 @@ input {
 }
 
 .c-form-field {
-    margin-bottom: 24px;
+    margin-bottom: var(--global-whitespace);
 }
 
 /* If a input is focused within the form-field class change te color of the label */
@@ -641,7 +650,7 @@ input {
     color: var(--c-button-textColor);
     background-color: var(--c-button-backgroundColor);
     line-height: 24px;
-    padding: 12px;
+    padding: var(--global-whitespace-xs);
 
     cursor: pointer;
     outline: none;
