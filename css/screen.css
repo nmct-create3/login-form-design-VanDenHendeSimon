@@ -235,7 +235,7 @@ input {
 
 .o-row--login {
     /* stuff here to align the card */
-    height: 100vh;
+    min-height: 100vh; /* minstens volledige viewport gebruiken, gewoon height fuckt de scrolling bij kleine height value */
     display: flex;
     align-items: center;
 }
@@ -490,6 +490,7 @@ input {
 
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .c-logo__symbol {
@@ -526,6 +527,9 @@ input {
     background-color: var(--c-card-backgroundColor);
     border-radius: var(--c-card-border-radius);
     box-shadow: var(--c-card-shadow);
+
+    transform: scale(0);
+    transition: var(--global-animation-duration);
 }
 
 .c-card__title {
