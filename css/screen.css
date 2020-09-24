@@ -527,9 +527,6 @@ input {
     background-color: var(--c-card-backgroundColor);
     border-radius: var(--c-card-border-radius);
     box-shadow: var(--c-card-shadow);
-
-    transform: scale(0);
-    transition: var(--global-animation-duration);
 }
 
 .c-card__title {
