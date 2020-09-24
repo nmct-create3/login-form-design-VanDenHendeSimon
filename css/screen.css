@@ -39,6 +39,9 @@
     --global-whitespace-sm: calc(var(--global-baseline) * 2);
     --global-whitespace-md: calc(var(--global-baseline) * 4);
     --global-whitespace-lg: calc(var(--global-baseline) * 6);
+
+    --global-animation-duration: 0.2s ease;
+    --global-animation-duration--fast: 0.1s ease;
 }
 
 /* CSS variables here */
@@ -55,7 +58,7 @@
 
 html {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.5em;
     font-family: var(--global-text-fontFamily);
     color: var(--global-text-color);
     box-sizing: border-box;
@@ -118,28 +121,28 @@ h3 {
 
 h1 {
     font-size: 36px;
-    line-height: 48px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 6);
+    margin: 0 0 var(--global-whitespace);
 }
 
 h2 {
     font-size: 32px;
-    line-height: 40px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 5);
+    margin: 0 0 var(--global-whitespace);
 }
 
 h3 {
     font-size: 26px;
-    line-height: 32px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 4);
+    margin: 0 0 var(--global-whitespace);
 }
 
 h4,
 h5,
 h6 {
     font-size: 20px;
-    line-height: 24px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 3);
+    margin: 0 0 var(--global-whitespace);
 }
 
 p,
@@ -149,12 +152,12 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace);
 }
 
 ul,
 ol {
-    padding-left: 24px;
+    padding-left: var(--global-whitespace);
 }
 
 li ul,
@@ -165,8 +168,8 @@ li ol {
 blockquote {
     font-style: normal;
     font-size: 23px;
-    line-height: 32px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 4);
+    margin: 0 0 var(--global-whitespace);
 }
 
 blockquote * {
@@ -177,15 +180,15 @@ blockquote * {
 figcaption {
     font-weight: 400;
     font-size: 12px;
-    line-height: 16px;
-    margin-top: 8px;
+    line-height: calc(var(--global-baseline) * 2);
+    margin-top: var(--global-baseline);
 }
 
 hr {
     border: 0;
     height: 1px;
     background: LightGrey;
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace);
 }
 
 a {
@@ -208,7 +211,7 @@ a:focus {
 
 label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: var(--global-baseline);
 }
 
 input {
@@ -227,7 +230,7 @@ input {
 
 .o-row {
     position: relative;
-    padding: 24px 24px 0;
+    padding: var(--global-whitespace) var(--global-whitespace) 0;
 }
 
 .o-row--login {
@@ -240,26 +243,26 @@ input {
 /* size modifiers */
 
 .o-row--lg {
-    padding-top: 48px;
-    padding-bottom: 24px;
+    padding-top: var(--global-whitespace-lg);
+    padding-bottom: var(--global-whitespace);
 }
 
 .o-row--xl {
-    padding-top: 72px;
-    padding-bottom: 48px;
+    padding-top: calc(var(--global-whitespace-lg) * 1.5);
+    padding-bottom: var(--global-whitespace-lg);
 }
 
 @media (min-width: 768px) {
     .o-row {
-        padding-left: 48px;
-        padding-right: 48px;
+        padding-left: var(--global-whitespace-lg);
+        padding-right: var(--global-whitespace-lg);
     }
 }
 
 @media (min-width: 992px) {
     .o-row--xl {
-        padding-top: 96px;
-        padding-bottom: 72px;
+        padding-top: calc(var(--global-whitespace-lg) * 2);
+        padding-bottom: calc(var(--global-whitespace-lg) * 1.5);
     }
 }
 
@@ -287,19 +290,19 @@ input {
 }
 
 .o-section + .o-section {
-    padding-top: 24px;
+    padding-top: var(--global-whitespace);
 }
 
 @media (min-width: 768px) {
     .o-section--lg + .o-section--lg,
     .o-section--xl + .o-section--xl {
-        padding-top: 48px;
+        padding-top: var(--global-whitespace-lg);
     }
 }
 
 @media (min-width: 992px) {
     .o-section--xl + .o-section--xl {
-        padding-top: 72px;
+        padding-top: calc(var(--global-whitespace-lg) * 1.5);
     }
 }
 
@@ -325,11 +328,11 @@ input {
 /* gutter modifiers, these affect o-layout__item too */
 
 .o-layout--gutter {
-    margin: 0 -12px;
+    margin: 0 calc(var(--global-whitespace-xs) * -1);
 }
 
 .o-layout--gutter > .o-layout__item {
-    padding: 0 12px;
+    padding: 0 var(--global-whitespace-xs);
 }
 
 .o-layout--gutter-sm {
@@ -341,19 +344,19 @@ input {
 }
 
 .o-layout--gutter-lg {
-    margin: 0 -24px;
+    margin: 0 calc(var(--global-whitespace) * -1);
 }
 
 .o-layout--gutter-lg > .o-layout__item {
-    padding: 0 24px;
+    padding: 0 var(--global-whitespace);
 }
 
 .o-layout--gutter-xl {
-    margin: 0 -48px;
+    margin: 0 calc(var(--global-whitespace-lg) * -1);
 }
 
 .o-layout--gutter-xl > .o-layout__item {
-    padding: 0 48px;
+    padding: 0 var(--global-whitespace-lg);
 }
 
 /* reverse horizontal row modifier */
@@ -483,7 +486,7 @@ input {
     --c-logo-symbol-innerRingColor: #3385FF;
     --c-logo-symbol-outerRingColor: #1B4186;
 
-    height: 24px;
+    height: calc(var(--global-baseline) * 3);
 
     display: flex;
     justify-content: center;
@@ -516,10 +519,12 @@ input {
 .c-card {
     --c-card-backgroundColor: white;
     --c-card-shadowColor: rgba(0, 0, 0, 0.07);
-    --c-card-shadow: 0 0 0 2px var(--c-card-shadowColor);
+    --c-card-border-width: calc(var(--global-baseline) * 0.25);
+    --c-card-shadow: 0 0 0 var(--c-card-border-width) var(--c-card-shadowColor);
+    --c-card-border-radius: calc(var(--global-baseline) * 0.5);
 
     background-color: var(--c-card-backgroundColor);
-    border-radius: 4px;
+    border-radius: var(--c-card-border-radius);
     box-shadow: var(--c-card-shadow);
 }
 
@@ -539,7 +544,7 @@ input {
 
 .c-card__footer {
     width: 100%;
-    border-top: 2px solid var(--c-card-shadowColor);
+    border-top: var(--c-card-border-width) solid var(--c-card-shadowColor);
 
     padding: var(--global-whitespace);
 
@@ -574,19 +579,21 @@ input {
 
     width: 100%;
     border: solid var(--global-input-borderColor);
-    border-radius: 3px;
+    border-radius: var(--c-card-border-radius);
 
     font-family: var(--global-text-fontFamily);
     color: var(--global-text-color);
 
     font-size: 16px;
-    line-height: 24px;
+    line-height: calc(var(--global-baseline) * 3);
     padding: var(--global-whitespace-xs);
+
+    transition: var(--global-animation-duration);
 }
 
 .c-input:focus {
     border: solid var(--global-input-borderColor--focused);
-    box-shadow: 0 0 0 3px var(--global-input-borderShadow);
+    box-shadow: 0 0 0 calc(var(--c-card-border-width) * 2) var(--global-input-borderShadow);
 }
 
 /*
@@ -599,14 +606,14 @@ input {
     --c-label-textColor: #606274;
 
     font-size: 14px;
-    line-height: 16px;
-    margin-bottom: 8px;
+    line-height: calc(var(--global-baseline) * 2);
+    margin-bottom: var(--global-baseline);
     color: var(--c-label-textColor);
 
 }
 
 .c-label--option {
-    margin: 0 0 0 8px;
+    margin: 0 0 0 var(--global-baseline);
 }
 
 .c-form-field {
@@ -631,7 +638,7 @@ input {
 */
 
 .c-button-container {
-    margin-bottom: 16px;
+    margin-bottom: calc(var(--global-baseline) * 2);
 }
 
 .c-button {
@@ -646,14 +653,16 @@ input {
     font-size: 16px;
     font-weight: 600;
     border: var(--c-button-border);
-    border-radius: 3px;
+    border-radius: var(--c-card-border-radius);
     color: var(--c-button-textColor);
     background-color: var(--c-button-backgroundColor);
-    line-height: 24px;
+    line-height: calc(var(--global-baseline) * 3);
     padding: var(--global-whitespace-xs);
 
     cursor: pointer;
     outline: none;
+
+    transition: var(--global-animation-duration--fast);
 }
 
 .c-button:hover {
